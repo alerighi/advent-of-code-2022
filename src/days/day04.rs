@@ -43,11 +43,11 @@ impl AoCProblem for AoCDay4 {
         self.input.push((parse_pair(parts[0]), parse_pair(parts[1])));
     }
 
-    fn solve_part1(&self) -> i64 {
-        self.input.iter().filter(|(i1, i2)| full_overlap(i1, i2)).count() as i64
+    fn solve_part1(&self) -> String {
+        self.input.iter().filter(|(i1, i2)| full_overlap(i1, i2)).count().to_string()
     }
 
-    fn solve_part2(&self) -> i64 {
-        self.input.iter().filter(|(i1, i2)| overlap(i1, i2)).count() as i64
+    fn solve_part2(&self) -> String {
+        self.input.iter().filter(|(i1, i2)| overlap(i1, i2)).count().to_string()
     }
 }

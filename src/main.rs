@@ -10,6 +10,12 @@ fn main() {
     let args: Vec<String> = std::env::args().collect();
     let day: u32 = args[1].parse().unwrap();
     let is_example = args.len() > 2 && args[2] == "ex";
+    let is_template = args.len() > 2 && args[2] == "t";
+
+    if is_template {
+        problem::create_template(day).unwrap();
+        return
+    }
 
     println!("*** solving day {} ***", day);
 
@@ -18,6 +24,8 @@ fn main() {
         2 => Box::new(days::day02::AoCDay2::default()),
         3 => Box::new(days::day03::AoCDay3::default()),
         4 => Box::new(days::day04::AoCDay4::default()),
+        5 => Box::new(days::day05::AoCDay5::default()),
+        6 => Box::new(days::day06::AoCDay6::default()),
         _ => panic!("day not yet implemented"),
     };
 

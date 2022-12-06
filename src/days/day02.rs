@@ -152,7 +152,7 @@ impl AoCProblem for AoCDay2 {
         self.moves.push((chars[0], chars[2]));
     }
 
-    fn solve_part1(&self) -> i64 {
+    fn solve_part1(&self) -> String {
         let mut score = 0;
         for (pl_1, pl_2) in self.moves.iter() {
             let mut game = Game::new();
@@ -162,10 +162,10 @@ impl AoCProblem for AoCDay2 {
             score += game.score().unwrap();
         }
 
-        score as i64
+        score.to_string()
     }
 
-    fn solve_part2(&self) -> i64 {
+    fn solve_part2(&self) -> String {
         let mut score = 0;
         for (pl_1, out) in self.moves.iter() {
             let mut game = Game::new();
@@ -175,6 +175,6 @@ impl AoCProblem for AoCDay2 {
             score += game.score().unwrap();
         }
 
-        score as i64
+        score.to_string()
     }
 }

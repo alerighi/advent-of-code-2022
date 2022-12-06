@@ -23,7 +23,7 @@ impl AoCProblem for AoCDay3 {
         self.lines.push(line)
     }
 
-    fn solve_part1(&self) -> i64 {
+    fn solve_part1(&self) -> String {
         let mut result = 0;
         for line in &self.lines {
             let (sack1, sack2) = line.split_at(line.len() / 2);
@@ -31,10 +31,10 @@ impl AoCProblem for AoCDay3 {
 
             result += common_chars(sack1, sack2).into_iter().map(|c| priority(c) as i64).sum::<i64>();
         }
-        result
+        result.to_string()
     }
 
-    fn solve_part2(&self) -> i64 {
+    fn solve_part2(&self) -> String {
         assert_eq!(self.lines.len() % 3, 0);
         let mut result = 0;
         for i in 0..(self.lines.len() / 3) {
@@ -44,6 +44,6 @@ impl AoCProblem for AoCDay3 {
                 }
             }
         }
-        result
+        result.to_string()
     }
 }

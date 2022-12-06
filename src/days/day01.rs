@@ -25,14 +25,15 @@ impl AoCProblem for AoCDay1 {
         }
     }
 
-    fn solve_part1(&self) -> i64 {
+    fn solve_part1(&self) -> String {
         self.groups
             .iter()
             .map(|el| el.iter().fold(0u32, |acc, el| acc + el))
-            .fold(0, |acc, val| if val > acc { val } else { acc }) as i64
+            .fold(0, |acc, val| if val > acc { val } else { acc })
+            .to_string()
     }
 
-    fn solve_part2(&self) -> i64 {
+    fn solve_part2(&self) -> String {
         let mut values: Vec<u32> = self
             .groups
             .iter()
@@ -40,6 +41,6 @@ impl AoCProblem for AoCDay1 {
             .collect();
         values.sort_by(|a, b| b.cmp(a));
 
-        (values[0] + values[1] + values[2]) as i64
+        (values[0] + values[1] + values[2]).to_string()
     }
 }
