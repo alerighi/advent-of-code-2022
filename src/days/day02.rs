@@ -133,7 +133,7 @@ impl Game {
     }
 }
 
-
+#[derive(Debug)]
 pub struct AoCDay2 {
     moves: Vec<(char, char)>
 }

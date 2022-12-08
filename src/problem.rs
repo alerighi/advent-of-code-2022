@@ -1,8 +1,9 @@
 use std::io::{self, Write};
 use std::fs::{self, File, OpenOptions};
 use std::path::Path;
+use std::fmt::Debug;
 
-pub trait AoCProblem {
+pub trait AoCProblem: Debug {
     fn parse_line(&mut self, line: String);
     fn solve_part1(&self) -> String;
     fn solve_part2(&self) -> String;
@@ -45,7 +46,7 @@ pub fn create_template(day: u32) -> io::Result<()> {
         .write(true)
         .append(true)
         .open("src/days/mod.rs")?;
-    
+
     writeln!(mod_file, "pub mod day{:02};", day)?;
 
     Ok(())
