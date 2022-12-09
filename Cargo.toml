@@ -1,6 +1,6 @@
 [package]
 name = "advent-of-code-2022"
-author = "Alessandro Righi <info@alerighi.it>"
+authors = ["Alessandro Righi <info@alerighi.it>"]
 description = "Framework to solve Advent of Code problems"
 version = "0.1.0"
 edition = "2021"
