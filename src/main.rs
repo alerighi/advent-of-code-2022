@@ -49,6 +49,8 @@ fn main() {
         9 => Box::new(days::day09::AoCDay9::default()),
         10 => Box::new(days::day10::AoCDay10::default()),
         11 => Box::new(days::day11::AoCDay11::default()),
+        12 => Box::new(days::day12::AoCDay12::default()),
+        13 => Box::new(days::day13::AoCDay13::default()),
         _ => panic!("day not yet implemented"),
     };
 
