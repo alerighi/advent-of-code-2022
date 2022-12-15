@@ -3,6 +3,7 @@ mod days;
 
 use std::fs::File;
 use std::io::{BufReader, BufRead};
+use std::time::Instant;
 
 use problem::AoCProblem;
 
@@ -76,6 +77,11 @@ fn main() {
         println!("PARSED INPUT: {:#?}", problem);
     }
 
-    println!("DAY{} PART 1 solution = {}", args.day, problem.solve_part1());
-    println!("DAY{} PART 2 solution = {}", args.day, problem.solve_part2());
+    let time_1 = Instant::now();
+    let result_1 = problem.solve_part1();
+    println!("DAY{} PART 1 solution = {} ({}ms)", args.day, result_1, time_1.elapsed().as_millis());
+
+    let time_2 = Instant::now();
+    let result_2 = problem.solve_part2();
+    println!("DAY{} PART 2 solution = {} ({}ms)", args.day, result_2, time_2.elapsed().as_millis());
 }
